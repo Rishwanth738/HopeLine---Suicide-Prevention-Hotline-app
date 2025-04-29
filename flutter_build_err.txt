@@ -1,0 +1,609 @@
+[        ] [ +282 ms] Error: Couldn't resolve the package 'image_picker' in 'package:image_picker/image_picker.dart'.
+[   +2 ms] [   +1 ms] Error: Couldn't resolve the package 'firebase_storage' in 'package:firebase_storage/firebase_storage.dart'.
+[        ] [        ] Error: Couldn't resolve the package 'suicide_hotline_app' in 'package:suicide_hotline_app/screens/therapist/therapist_chat_screen.dart'.
+[        ] [        ] lib/main.dart:19:8: Error: Error when reading 'lib/firebase_options.dart': The system cannot find the file specified.
+[   +2 ms] [        ] import 'firebase_options.dart';
+[        ] [        ]        ^
+[+6082 ms] [+6778 ms] lib/screens/therapist/therapist_chat_screen.dart:5:8: Error: Not found: 'package:image_picker/image_picker.dart'
+[   +1 ms] [        ] import 'package:image_picker/image_picker.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/auth/therapist_register_screen.dart:5:8: Error: Not found: 'package:image_picker/image_picker.dart'
+[        ] [        ] import 'package:image_picker/image_picker.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/therapist_profile.dart:6:8: Error: Not found: 'package:image_picker/image_picker.dart'
+[        ] [        ] import 'package:image_picker/image_picker.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/services/therapist_service.dart:16:8: Error: Not found: 'package:image_picker/image_picker.dart'
+[        ] [        ] import 'package:image_picker/image_picker.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/therapist/therapist_chat_screen.dart:6:8: Error: Not found: 'package:firebase_storage/firebase_storage.dart'
+[        ] [        ] import 'package:firebase_storage/firebase_storage.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/therapist_profile.dart:4:8: Error: Not found: 'package:firebase_storage/firebase_storage.dart'
+[        ] [        ] import 'package:firebase_storage/firebase_storage.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/services/therapist_service.dart:15:8: Error: Not found: 'package:firebase_storage/firebase_storage.dart'
+[        ] [        ] import 'package:firebase_storage/firebase_storage.dart';
+[        ] [        ]        ^
+[ +101 ms] [  +98 ms] lib/screens/therapist/therapist_dashboard_screen.dart:7:8: Error: Error when reading 'lib/screens/therapist/therapist_appointments_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'therapist_appointments_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/therapist/therapist_profile_screen.dart:4:8: Error: Not found: 'package:image_picker/image_picker.dart'
+[        ] [        ] import 'package:image_picker/image_picker.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/screens/therapist/clients_list_screen.dart:5:8: Error: Not found: 'package:suicide_hotline_app/screens/therapist/therapist_chat_screen.dart'
+[        ] [        ] import 'package:suicide_hotline_app/screens/therapist/therapist_chat_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/routes.dart:4:8: Error: Error when reading 'lib/screens/register_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/register_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/routes.dart:5:8: Error: Error when reading 'lib/screens/welcome_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/welcome_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] Error: Couldn't resolve the package 'suicide_hotline_app' in 'package:suicide_hotline_app/services/therapist_service.dart'.
+[        ] [        ] lib/routes.dart:8:8: Error: Error when reading 'lib/screens/resources_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/resources_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/routes.dart:10:8: Error: Error when reading 'lib/screens/support_group_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/support_group_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/routes.dart:11:8: Error: Error when reading 'lib/screens/ai_chat_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/ai_chat_screen.dart';
+[        ] [        ]        ^
+[        ] [        ] lib/routes.dart:12:8: Error: Error when reading 'lib/screens/settings_screen.dart': The system cannot find the file specified.
+[        ] [        ] import 'screens/settings_screen.dart';
+[        ] [        ]        ^
+[+8495 ms] [+8476 ms] lib/screens/chat_screen.dart:2:8: Error: Not found: 'package:suicide_hotline_app/services/therapist_service.dart'
+[        ] [        ] import 'package:suicide_hotline_app/services/therapist_service.dart';
+[        ] [        ]        ^
+[+18996 ms] [+18960 ms] lib/services/therapist_service.dart:1022:16: Error: 'sendMessage' is already declared in this scope.
+[   +1 ms] [        ]   Future<bool> sendMessage({
+[        ] [        ]                ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:127:16: Context: Previous declaration of 'sendMessage'.
+[        ] [        ]   Future<bool> sendMessage(String text) async {
+[        ] [        ]                ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:1059:16: Error: 'markMessagesAsRead' is already declared in this scope.
+[        ] [        ]   Future<void> markMessagesAsRead(String conversationId) async {
+[        ] [        ]                ^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:231:16: Context: Previous declaration of 'markMessagesAsRead'.
+[        ] [        ]   Future<void> markMessagesAsRead([String? conversationId, String? userId]) async {
+[        ] [        ]                ^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:918:25: Error: 'getMessages' is already declared in this scope.
+[        ] [        ]   Stream<QuerySnapshot> getMessages(String conversationId) {
+[        ] [        ]                         ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:285:38: Context: Previous declaration of 'getMessages'.
+[        ] [        ]   Stream<List<Map<String, dynamic>>> getMessages({required String conversationId}) {
+[        ] [        ]                                      ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:991:25: Error: 'getAvailableTherapists' is already declared in this scope.
+[        ] [        ]   Stream<QuerySnapshot> getAvailableTherapists() {
+[        ] [        ]                         ^^^^^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:518:27: Context: Previous declaration of 'getAvailableTherapists'.
+[        ] [        ]   Future<List<Therapist>> getAvailableTherapists() async {
+[        ] [        ]                           ^^^^^^^^^^^^^^^^^^^^^^
+[ +195 ms] [ +181 ms] lib/screens/therapist_profile.dart:20:9: Error: Type 'FirebaseStorage' not found.
+[   +1 ms] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]         ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:21:9: Error: Type 'ImagePicker' not found.
+[        ] [        ]   final ImagePicker _picker = ImagePicker();
+[        ] [        ]         ^^^^^^^^^^^
+[        ] [   +4 ms] lib/services/therapist_service.dart:23:9: Error: Type 'FirebaseStorage' not found.
+[        ] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]         ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/chat_screen.dart:13:9: Error: Type 'TherapistService' not found.
+[        ] [        ]   final TherapistService _therapistService = TherapistService();
+[        ] [        ]         ^^^^^^^^^^^^^^^^
+[ +696 ms] [ +743 ms] lib/main.dart:28:16: Error: Undefined name 'DefaultFirebaseOptions'.
+[        ] [        ]       options: DefaultFirebaseOptions.currentPlatform,
+[        ] [        ]                ^^^^^^^^^^^^^^^^^^^^^^
+[        ] [  +17 ms] lib/screens/home_screen.dart:347:49: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                       backgroundImage: therapist['photoUrl'] != null && therapist['photoUrl'].isNotEmpty
+[        ] [        ]                                                 ^
+[        ] [        ] lib/screens/home_screen.dart:347:82: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                       backgroundImage: therapist['photoUrl'] != null && therapist['photoUrl'].isNotEmpty
+[        ] [        ]                                                                                  ^
+[        ] [        ] lib/screens/home_screen.dart:348:51: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                           ? NetworkImage(therapist['photoUrl'])
+[        ] [        ]                                                   ^
+[        ] [        ] lib/screens/home_screen.dart:350:39: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                       child: therapist['photoUrl'] == null || therapist['photoUrl'].isEmpty
+[        ] [        ]                                       ^
+[        ] [        ] lib/screens/home_screen.dart:350:72: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                       child: therapist['photoUrl'] == null || therapist['photoUrl'].isEmpty
+[        ] [        ]                                                                        ^
+[        ] [        ] lib/screens/home_screen.dart:354:42: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                     title: Text(therapist['name']),
+[        ] [        ]                                          ^
+[        ] [        ] lib/screens/home_screen.dart:355:45: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                     subtitle: Text(therapist['specialty']),
+[        ] [        ]                                             ^
+[        ] [        ] lib/screens/home_screen.dart:360:42: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                         Text('${therapist['rating']}'),
+[        ] [        ]                                          ^
+[        ] [        ] lib/screens/home_screen.dart:369:51: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                             therapistId: therapist['id'],
+[        ] [        ]                                                   ^
+[        ] [        ] lib/screens/home_screen.dart:370:53: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                             therapistName: therapist['name'],
+[        ] [        ]                                                     ^
+[        ] [        ] lib/screens/home_screen.dart:371:57: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                             therapistPhotoUrl: therapist['photoUrl'],
+[        ] [        ]                                                         ^
+[        ] [   +2 ms] lib/screens/therapist/therapist_chat_screen.dart:56:45: Error: The method 'getUserDoc' isn't defined for the class 'TherapistService'.
+[        ] [        ]  - 'TherapistService' is from 'package:suicide_prevention_app/services/therapist_service.dart' ('lib/services/therapist_service.dart').
+[        ] [        ] Try correcting the name to the name of an existing method, or defining a method named 'getUserDoc'.
+[        ] [        ]     final userDoc = await _therapistService.getUserDoc(widget.clientId);
+[        ] [        ]                                             ^^^^^^^^^^
+[        ] [        ] lib/screens/therapist/therapist_chat_screen.dart:89:42: Error: Too many positional arguments: 1 allowed, but 3 found.
+[        ] [        ] Try removing the extra positional arguments.
+[        ] [        ]       await _therapistService.sendMessage(
+[        ] [        ]                                          ^
+[        ] [        ] lib/screens/therapist/therapist_chat_screen.dart:170:52: Error: Too many positional arguments: 0 allowed, but 1 found.
+[        ] [        ] Try removing the extra positional arguments.
+[        ] [        ]               stream: _therapistService.getMessages(widget.conversationId),
+[        ] [        ]                                                    ^
+[        ] [        ] lib/screens/therapist/therapist_chat_screen.dart:304:37: Error: The method 'getUserDoc' isn't defined for the class 'TherapistService'.
+[        ] [        ]  - 'TherapistService' is from 'package:suicide_prevention_app/services/therapist_service.dart' ('lib/services/therapist_service.dart').
+[        ] [        ] Try correcting the name to the name of an existing method, or defining a method named 'getUserDoc'.
+[        ] [        ]           future: _therapistService.getUserDoc(widget.clientId),
+[        ] [        ]                                     ^^^^^^^^^^
+[        ] [   +5 ms] lib/screens/auth/therapist_register_screen.dart:75:9: Error: No named parameter with the name 'profileImage'.
+[        ] [        ]         profileImage: _profileImage,
+[        ] [        ]         ^^^^^^^^^^^^
+[        ] [   +2 ms] lib/screens/therapist/therapist_dashboard_screen.dart:242:40: Error: No named parameter with the name 'therapistId'.
+[        ] [        ]                 TherapistProfileScreen(therapistId: _therapistId),
+[        ] [        ]                                        ^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist/therapist_profile_screen.dart:9:9: Context: Found this candidate, but the arguments don't match.
+[        ] [        ]   const TherapistProfileScreen({Key? key}) : super(key: key);
+[        ] [        ]         ^^^^^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist/therapist_dashboard_screen.dart:239:17: Error: The method 'TherapistAppointmentsScreen' isn't defined for the class '_TherapistDashboardScreenState'.
+[        ] [        ]  - '_TherapistDashboardScreenState' is from 'package:suicide_prevention_app/screens/therapist/therapist_dashboard_screen.dart' ('lib/screens/therapist/therapist_dashboard_screen.dart').
+[        ] [        ] Try correcting the name to the name of an existing method, or defining a method named 'TherapistAppointmentsScreen'.
+[        ] [        ]                 TherapistAppointmentsScreen(therapistId: _therapistId),
+[        ] [        ]                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[        ] [   +2 ms] lib/screens/therapist/clients_list_screen.dart:373:41: Error: The method 'TherapistChatScreen' isn't defined for the class '_ClientsListScreenState'.
+[        ] [        ]  - '_ClientsListScreenState' is from 'package:suicide_prevention_app/screens/therapist/clients_list_screen.dart' ('lib/screens/therapist/clients_list_screen.dart').
+[        ] [        ] Try correcting the name to the name of an existing method, or defining a method named 'TherapistChatScreen'.
+[        ] [        ]                   builder: (context) => TherapistChatScreen(
+[        ] [        ]                                         ^^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:20:9: Error: 'FirebaseStorage' isn't a type.
+[        ] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]         ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:20:36: Error: Undefined name 'FirebaseStorage'.
+[        ] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]                                    ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:21:9: Error: 'ImagePicker' isn't a type.
+[        ] [        ]   final ImagePicker _picker = ImagePicker();
+[        ] [        ]         ^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:21:31: Error: Method not found: 'ImagePicker'.
+[        ] [        ]   final ImagePicker _picker = ImagePicker();
+[        ] [        ]                               ^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:182:11: Error: 'XFile' isn't a type.
+[        ] [        ]     final XFile? image = await _picker.pickImage(
+[        ] [        ]           ^^^^^
+[        ] [        ] lib/screens/therapist_profile.dart:183:15: Error: The getter 'ImageSource' isn't defined for the class '_TherapistProfileScreenState'.
+[        ] [        ]  - '_TherapistProfileScreenState' is from 'package:suicide_prevention_app/screens/therapist_profile.dart' ('lib/screens/therapist_profile.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'ImageSource'.
+[        ] [        ]       source: ImageSource.gallery,
+[        ] [        ]               ^^^^^^^^^^^
+[        ] [   +1 ms] lib/routes.dart:19:27: Error: Couldn't find constructor 'WelcomeScreen'.
+[        ] [        ]   '/': (context) => const WelcomeScreen(),
+[        ] [        ]                           ^^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:21:35: Error: Couldn't find constructor 'RegisterScreen'.
+[        ] [        ]   '/register': (context) => const RegisterScreen(),
+[        ] [        ]                                   ^^^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:25:36: Error: Couldn't find constructor 'ResourcesScreen'.
+[        ] [        ]   '/resources': (context) => const ResourcesScreen(),
+[        ] [        ]                                    ^^^^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:27:40: Error: Couldn't find constructor 'SupportGroupScreen'.
+[        ] [        ]   '/support_group': (context) => const SupportGroupScreen(),
+[        ] [        ]                                        ^^^^^^^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:28:34: Error: Couldn't find constructor 'AIChatScreen'.
+[        ] [        ]   '/ai_chat': (context) => const AIChatScreen(),
+[        ] [        ]                                  ^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:29:35: Error: Couldn't find constructor 'SettingsScreen'.
+[        ] [        ]   '/settings': (context) => const SettingsScreen(),
+[        ] [        ]                                   ^^^^^^^^^^^^^^
+[        ] [        ] lib/routes.dart:33:46: Error: Couldn't find constructor 'TherapistDashboard'.
+[        ] [        ]   '/therapist_dashboard': (context) => const TherapistDashboard(),
+[        ] [        ]                                              ^^^^^^^^^^^^^^^^^^
+[ +471 ms] [ +451 ms] lib/services/therapist_service.dart:23:9: Error: 'FirebaseStorage' isn't a type.
+[        ] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]         ^^^^^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:23:36: Error: Undefined name 'FirebaseStorage'.
+[        ] [        ]   final FirebaseStorage _storage = FirebaseStorage.instance;
+[        ] [        ]                                    ^^^^^^^^^^^^^^^
+[        ] [   +5 ms] lib/services/therapist_service.dart:637:30: Error: Can't use 'getAvailableTherapists' because it is declared more than once.
+[        ] [        ]     final therapists = await getAvailableTherapists();
+[        ] [        ]                              ^
+[        ] [        ] lib/services/therapist_service.dart:735:55: Error: The getter 'name' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'name'.
+[        ] [        ]         title: Text('Request Session with ${therapist.name}'),
+[        ] [        ]                                                       ^^^^
+[        ] [        ] lib/services/therapist_service.dart:799:72: Error: The getter 'name' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'name'.
+[        ] [        ]                           ? 'Your request has been sent to ${therapist.name}. You will be notified when they accept your request.'
+[        ] [        ]                                                                        ^^^^
+[        ] [        ] lib/services/therapist_service.dart:1001:13: Error: 'ImagePicker' isn't a type.
+[        ] [        ]       final ImagePicker _picker = ImagePicker();
+[        ] [        ]             ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:1002:13: Error: 'XFile' isn't a type.
+[        ] [        ]       final XFile? image = await _picker.pickImage(
+[        ] [        ]             ^^^^^
+[        ] [        ] lib/services/therapist_service.dart:1001:35: Error: The method 'ImagePicker' isn't defined for the class 'TherapistService'.
+[        ] [        ]  - 'TherapistService' is from 'package:suicide_prevention_app/services/therapist_service.dart' ('lib/services/therapist_service.dart').
+[        ] [        ] Try correcting the name to the name of an existing method, or defining a method named 'ImagePicker'.
+[        ] [        ]       final ImagePicker _picker = ImagePicker();
+[        ] [        ]                                   ^^^^^^^^^^^
+[        ] [        ] lib/services/therapist_service.dart:1003:17: Error: The getter 'ImageSource' isn't defined for the class 'TherapistService'.
+[        ] [        ]  - 'TherapistService' is from 'package:suicide_prevention_app/services/therapist_service.dart' ('lib/services/therapist_service.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'ImageSource'.
+[        ] [        ]         source: ImageSource.gallery,
+[        ] [        ]                 ^^^^^^^^^^^
+[        ] [   +2 ms] lib/screens/therapist_chat_screen.dart:456:42: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                         therapistDetails?['specialty'] ?? 'Therapist',
+[        ] [        ]                                          ^
+[        ] [        ] lib/screens/therapist_chat_screen.dart:467:49: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]                             '${therapistDetails?['rating'] ?? 4.5}',
+[        ] [        ]                                                 ^
+[        ] [        ] lib/screens/therapist_chat_screen.dart:474:52: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[   +2 ms] [        ]                             ' • ${therapistDetails?['yearsOfExperience'] ?? 5} years exp.',
+[        ] [        ]                                                    ^
+[        ] [        ] lib/screens/therapist_chat_screen.dart:497:32: Error: The operator '[]' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the operator to an existing operator, or defining a '[]' operator.
+[        ] [        ]               therapistDetails?['bio'] ?? 'No bio available.',
+[        ] [        ]                                ^
+[        ] [   +3 ms] lib/screens/therapist/therapist_profile_screen.dart:64:52: Error: The getter 'yearsExperience' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'yearsExperience'.
+[        ] [        ]           _experienceController.text = _therapist!.yearsExperience.toString();
+[        ] [        ]                                                    ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist/therapist_profile_screen.dart:212:60: Error: The getter 'yearsExperience' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'yearsExperience'.
+[        ] [        ]                 _buildInfoRow('Experience', '${_therapist!.yearsExperience} years'),
+[        ] [        ]                                                            ^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/therapist/therapist_profile_screen.dart:392:70: Error: The getter 'yearsExperience' isn't defined for the class 'Therapist'.
+[        ] [        ]  - 'Therapist' is from 'package:suicide_prevention_app/models/therapist.dart' ('lib/models/therapist.dart').
+[        ] [        ] Try correcting the name to the name of an existing getter, or defining a getter or field named 'yearsExperience'.
+[        ] [        ]                             _experienceController.text = _therapist!.yearsExperience.toString();
+[        ] [        ]                                                                      ^^^^^^^^^^^^^^^
+[        ] [   +1 ms] lib/screens/chat_screen.dart:13:9: Error: 'TherapistService' isn't a type.
+[        ] [        ]   final TherapistService _therapistService = TherapistService();
+[        ] [        ]         ^^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/chat_screen.dart:13:46: Error: Method not found: 'TherapistService'.
+[        ] [        ]   final TherapistService _therapistService = TherapistService();
+[        ] [        ]                                              ^^^^^^^^^^^^^^^^
+[        ] [        ] lib/screens/chat_screen.dart:195:36: Error: 'Timestamp' isn't a type.
+[        ] [        ]         ? (message['timestamp'] as Timestamp).toDate()
+[        ] [        ]                                    ^^^^^^^^^
+[        ] [+2261 ms] Unhandled exception:
+[        ]            FileSystemException(uri=org-dartlang-untranslatable-uri:package%3Aimage_picker%2Fimage_picker.dart; message=StandardFileSystem only supports file:* and data:* URIs)
+[        ]            #0      StandardFileSystem.entityForUri (package:front_end/src/api_prototype/standard_file_system.dart:45)
+[        ]            #1      asFileUri (package:vm/kernel_front_end.dart:820)
+[        ]            #2      writeDepfile (package:vm/kernel_front_end.dart:960)
+[        ]            <asynchronous suspension>
+[        ]            #3      FrontendCompiler.compile (package:frontend_server/frontend_server.dart:712)
+[        ]            <asynchronous suspension>
+[        ]            #4      starter (package:frontend_server/starter.dart:109)
+[        ]            <asynchronous suspension>
+[        ]            #5      main (file:///C:/b/s/w/ir/x/w/sdk/pkg/frontend_server/bin/frontend_server_starter.dart:13)
+[        ]            <asynchronous suspension>
+[        ] [   +1 ms] Target kernel_snapshot_program failed: Exception
+[        ]            #0      KernelSnapshot.build (package:flutter_tools/src/build_system/targets/common.dart:281:7)
+[        ]            <asynchronous suspension>
+[        ]            #1      _BuildInstance._invokeInternal (package:flutter_tools/src/build_system/build_system.dart:876:9)
+[        ]            <asynchronous suspension>
+[        ]            #2      Future.wait.<anonymous closure> (dart:async/future.dart:528:21)
+[        ]            <asynchronous suspension>
+[        ]            #3      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:814:32)
+[        ]            <asynchronous suspension>
+[        ]            #4      Future.wait.<anonymous closure> (dart:async/future.dart:528:21)
+[        ]            <asynchronous suspension>
+[        ]            #5      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:814:32)
+[        ]            <asynchronous suspension>
+[        ]            #6      Future.wait.<anonymous closure> (dart:async/future.dart:528:21)
+[        ]            <asynchronous suspension>
+[        ]            #7      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:814:32)
+[        ]            <asynchronous suspension>
+[        ]            #8      Future.wait.<anonymous closure> (dart:async/future.dart:528:21)
+[        ]            <asynchronous suspension>
+[        ]            #9      _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:814:32)
+[        ]            <asynchronous suspension>
+[        ]            #10     Future.wait.<anonymous closure> (dart:async/future.dart:528:21)
+[        ]            <asynchronous suspension>
+[        ]            #11     _BuildInstance.invokeTarget (package:flutter_tools/src/build_system/build_system.dart:814:32)
+[        ]            <asynchronous suspension>
+[        ]            #12     FlutterBuildSystem.build (package:flutter_tools/src/build_system/build_system.dart:637:16)
+[        ]            <asynchronous suspension>
+[        ]            #13     AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:354:32)
+[        ]            <asynchronous suspension>
+[        ]            #14     FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1558:27)
+[        ]            <asynchronous suspension>
+[        ]            #15     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #16     CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+[        ]            <asynchronous suspension>
+[        ]            #17     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+[        ]            <asynchronous suspension>
+[        ]            #18     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #19     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+[        ]            <asynchronous suspension>
+[        ]            #20     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+[        ]            <asynchronous suspension>
+[        ]            #21     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #22     main (package:flutter_tools/executable.dart:99:3)
+[        ]            <asynchronous suspension>
+[        ] [  +26 ms] 
+[        ]            #0      throwToolExit (package:flutter_tools/src/base/common.dart:34:3)
+[        ]            #1      AssembleCommand.runCommand (package:flutter_tools/src/commands/assemble.dart:373:7)
+[        ]            <asynchronous suspension>
+[        ]            #2      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1558:27)
+[        ]            <asynchronous suspension>
+[        ]            #3      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #4      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+[        ]            <asynchronous suspension>
+[        ]            #5      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+[        ]            <asynchronous suspension>
+[        ]            #6      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #7      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+[        ]            <asynchronous suspension>
+[        ]            #8      run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+[        ]            <asynchronous suspension>
+[        ]            #9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+[        ]            <asynchronous suspension>
+[        ]            #10     main (package:flutter_tools/executable.dart:99:3)
+[        ]            <asynchronous suspension>
+[        ] FAILURE: Build failed with an exception.
+[        ] * What went wrong:
+[        ] Execution failed for task ':app:compileFlutterBuildRelease'.
+[        ] > Process 'command 'C:\Users\rishw\dev\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+[        ] * Try:
+[        ] > Run with --debug option to get more log output.
+[        ] > Run with --scan to get full insights.
+[        ] > Get more help at https://help.gradle.org.
+[        ] * Exception is:
+[        ] org.gradle.api.tasks.TaskExecutionException: Execution failed for task ':app:compileFlutterBuildRelease'.
+[        ] 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.lambda$executeIfValid$1(ExecuteActionsTaskExecuter.java:130)
+[        ] 	at org.gradle.internal.Try$Failure.ifSuccessfulOrElse(Try.java:293)
+[        ] 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:128)
+[        ] 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+[        ] 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+[        ] 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+[        ] 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+[        ] 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+[        ] 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+[        ] 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+[        ] 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+[        ] 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+[        ] 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+[        ] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+[        ] 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+[        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[        ] 	at java.base/java.lang.Thread.run(Unknown Source)
+[        ] Caused by: org.gradle.process.internal.ExecException: Process 'command 'C:\Users\rishw\dev\flutter\bin\flutter.bat'' finished with non-zero exit value 1
+[        ] 	at org.gradle.process.internal.DefaultExecHandle$ExecResultImpl.assertNormalExitValue(DefaultExecHandle.java:442)
+[        ] 	at org.gradle.process.internal.DefaultExecAction.execute(DefaultExecAction.java:38)
+[        ] 	at org.gradle.process.internal.DefaultExecActionFactory.exec(DefaultExecActionFactory.java:202)
+[        ] 	at org.gradle.api.internal.project.DefaultProject.exec(DefaultProject.java:1196)
+[        ] 	at org.gradle.api.internal.project.DefaultProject.exec(DefaultProject.java:1191)
+[        ] 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+[        ] 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[        ] 	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:107)
+[        ] 	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:323)
+[        ] 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1254)
+[        ] 	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1030)
+[        ] 	at org.gradle.internal.classpath.CallInterceptingMetaClass.lambda$invokeMethod$5(CallInterceptingMetaClass.java:179)
+[        ] 	at org.gradle.internal.classpath.CallInterceptingMetaClass.invokeIntercepted(CallInterceptingMetaClass.java:235)
+[        ] 	at org.gradle.internal.classpath.CallInterceptingMetaClass.invokeMethod(CallInterceptingMetaClass.java:179)
+[        ] 	at org.codehaus.groovy.runtime.callsite.PogoMetaClassSite.call(PogoMetaClassSite.java:38)
+[        ] 	at org.codehaus.groovy.runtime.callsite.CallSiteArray.defaultCall(CallSiteArray.java:47)
+[        ] 	at org.gradle.api.Project$exec$8.call(Unknown Source)
+[        ] 	at BaseFlutterTask.buildBundle(flutter.groovy:1704)
+[        ] 	at BaseFlutterTask$buildBundle.callCurrent(Unknown Source)
+[        ] 	at FlutterTask.build(flutter.groovy:1842)
+[        ] 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(Unknown Source)
+[        ] 	at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+[        ] 	at org.gradle.internal.reflect.JavaMethod.invoke(JavaMethod.java:125)
+[        ] 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.doExecute(StandardTaskAction.java:58)
+[        ] 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:51)
+[        ] 	at org.gradle.api.internal.project.taskfactory.StandardTaskAction.execute(StandardTaskAction.java:29)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution$3.run(TaskExecution.java:244)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:29)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$1.execute(DefaultBuildOperationRunner.java:26)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.run(DefaultBuildOperationRunner.java:47)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeAction(TaskExecution.java:229)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeActions(TaskExecution.java:212)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution.executeWithPreviousOutputFiles(TaskExecution.java:195)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution.execute(TaskExecution.java:162)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep.executeInternal(ExecuteStep.java:105)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep.access$000(ExecuteStep.java:44)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:59)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep$1.call(ExecuteStep.java:56)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:56)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteStep.execute(ExecuteStep.java:44)
+[        ] 	at org.gradle.internal.execution.steps.CancelExecutionStep.execute(CancelExecutionStep.java:42)
+[        ] 	at org.gradle.internal.execution.steps.TimeoutStep.executeWithoutTimeout(TimeoutStep.java:75)
+[        ] 	at org.gradle.internal.execution.steps.TimeoutStep.execute(TimeoutStep.java:55)
+[        ] 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:50)
+[        ] 	at org.gradle.internal.execution.steps.PreCreateOutputParentsStep.execute(PreCreateOutputParentsStep.java:28)
+[        ] 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:67)
+[        ] 	at org.gradle.internal.execution.steps.RemovePreviousOutputsStep.execute(RemovePreviousOutputsStep.java:37)
+[        ] 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:61)
+[        ] 	at org.gradle.internal.execution.steps.BroadcastChangingOutputsStep.execute(BroadcastChangingOutputsStep.java:26)
+[        ] 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:69)
+[        ] 	at org.gradle.internal.execution.steps.CaptureOutputsAfterExecutionStep.execute(CaptureOutputsAfterExecutionStep.java:46)
+[        ] 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:40)
+[        ] 	at org.gradle.internal.execution.steps.ResolveInputChangesStep.execute(ResolveInputChangesStep.java:29)
+[        ] 	at org.gradle.internal.execution.steps.BuildCacheStep.executeWithoutCache(BuildCacheStep.java:189)
+[        ] 	at org.gradle.internal.execution.steps.BuildCacheStep.lambda$execute$1(BuildCacheStep.java:75)
+[        ] 	at org.gradle.internal.Either$Right.fold(Either.java:175)
+[        ] 	at org.gradle.internal.execution.caching.CachingState.fold(CachingState.java:62)
+[        ] 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:73)
+[        ] 	at org.gradle.internal.execution.steps.BuildCacheStep.execute(BuildCacheStep.java:48)
+[        ] 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:46)
+[        ] 	at org.gradle.internal.execution.steps.StoreExecutionStateStep.execute(StoreExecutionStateStep.java:35)
+[        ] 	at org.gradle.internal.execution.steps.SkipUpToDateStep.executeBecause(SkipUpToDateStep.java:75)
+[        ] 	at org.gradle.internal.execution.steps.SkipUpToDateStep.lambda$execute$2(SkipUpToDateStep.java:53)
+[        ] 	at java.base/java.util.Optional.orElseGet(Unknown Source)
+[        ] 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:53)
+[        ] 	at org.gradle.internal.execution.steps.SkipUpToDateStep.execute(SkipUpToDateStep.java:35)
+[        ] 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:37)
+[        ] 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsFinishedStep.execute(MarkSnapshottingInputsFinishedStep.java:27)
+[        ] 	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:49)
+[        ] 	at org.gradle.internal.execution.steps.ResolveIncrementalCachingStateStep.executeDelegate(ResolveIncrementalCachingStateStep.java:27)
+[        ] 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:71)
+[        ] 	at org.gradle.internal.execution.steps.AbstractResolveCachingStateStep.execute(AbstractResolveCachingStateStep.java:39)
+[        ] 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:65)
+[        ] 	at org.gradle.internal.execution.steps.ResolveChangesStep.execute(ResolveChangesStep.java:36)
+[        ] 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:105)
+[        ] 	at org.gradle.internal.execution.steps.ValidateStep.execute(ValidateStep.java:54)
+[        ] 	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:64)
+[        ] 	at org.gradle.internal.execution.steps.AbstractCaptureStateBeforeExecutionStep.execute(AbstractCaptureStateBeforeExecutionStep.java:43)
+[        ] 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.executeWithNonEmptySources(AbstractSkipEmptyWorkStep.java:125)
+[        ] 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:56)
+[        ] 	at org.gradle.internal.execution.steps.AbstractSkipEmptyWorkStep.execute(AbstractSkipEmptyWorkStep.java:36)
+[        ] 	at org.gradle.internal.execution.steps.legacy.MarkSnapshottingInputsStartedStep.execute(MarkSnapshottingInputsStartedStep.java:38)
+[        ] 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:36)
+[        ] 	at org.gradle.internal.execution.steps.LoadPreviousExecutionStateStep.execute(LoadPreviousExecutionStateStep.java:23)
+[        ] 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:75)
+[        ] 	at org.gradle.internal.execution.steps.HandleStaleOutputsStep.execute(HandleStaleOutputsStep.java:41)
+[        ] 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.lambda$execute$0(AssignMutableWorkspaceStep.java:35)
+[        ] 	at org.gradle.api.internal.tasks.execution.TaskExecution$4.withWorkspace(TaskExecution.java:289)
+[        ] 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:31)
+[        ] 	at org.gradle.internal.execution.steps.AssignMutableWorkspaceStep.execute(AssignMutableWorkspaceStep.java:22)
+[        ] 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:40)
+[        ] 	at org.gradle.internal.execution.steps.ChoosePipelineStep.execute(ChoosePipelineStep.java:23)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.lambda$execute$2(ExecuteWorkBuildOperationFiringStep.java:67)
+[        ] 	at java.base/java.util.Optional.orElseGet(Unknown Source)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:67)
+[        ] 	at org.gradle.internal.execution.steps.ExecuteWorkBuildOperationFiringStep.execute(ExecuteWorkBuildOperationFiringStep.java:39)
+[        ] 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:46)
+[        ] 	at org.gradle.internal.execution.steps.IdentityCacheStep.execute(IdentityCacheStep.java:34)
+[        ] 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:48)
+[        ] 	at org.gradle.internal.execution.steps.IdentifyStep.execute(IdentifyStep.java:35)
+[        ] 	at org.gradle.internal.execution.impl.DefaultExecutionEngine$1.execute(DefaultExecutionEngine.java:61)
+[        ] 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.executeIfValid(ExecuteActionsTaskExecuter.java:127)
+[        ] 	at org.gradle.api.internal.tasks.execution.ExecuteActionsTaskExecuter.execute(ExecuteActionsTaskExecuter.java:116)
+[        ] 	at org.gradle.api.internal.tasks.execution.FinalizePropertiesTaskExecuter.execute(FinalizePropertiesTaskExecuter.java:46)
+[        ] 	at org.gradle.api.internal.tasks.execution.ResolveTaskExecutionModeExecuter.execute(ResolveTaskExecutionModeExecuter.java:51)
+[        ] 	at org.gradle.api.internal.tasks.execution.SkipTaskWithNoActionsExecuter.execute(SkipTaskWithNoActionsExecuter.java:57)
+[        ] 	at org.gradle.api.internal.tasks.execution.SkipOnlyIfTaskExecuter.execute(SkipOnlyIfTaskExecuter.java:74)
+[        ] 	at org.gradle.api.internal.tasks.execution.CatchExceptionTaskExecuter.execute(CatchExceptionTaskExecuter.java:36)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.executeTask(EventFiringTaskExecuter.java:77)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:55)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter$1.call(EventFiringTaskExecuter.java:52)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:209)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$CallableBuildOperationWorker.execute(DefaultBuildOperationRunner.java:204)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:66)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner$2.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:166)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.execute(DefaultBuildOperationRunner.java:59)
+[        ] 	at org.gradle.internal.operations.DefaultBuildOperationRunner.call(DefaultBuildOperationRunner.java:53)
+[        ] 	at org.gradle.api.internal.tasks.execution.EventFiringTaskExecuter.execute(EventFiringTaskExecuter.java:52)
+[        ] 	at org.gradle.execution.plan.LocalTaskNodeExecutor.execute(LocalTaskNodeExecutor.java:42)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:331)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$InvokeNodeExecutorsAction.execute(DefaultTaskExecutionGraph.java:318)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.lambda$execute$0(DefaultTaskExecutionGraph.java:314)
+[        ] 	at org.gradle.internal.operations.CurrentBuildOperationRef.with(CurrentBuildOperationRef.java:85)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:314)
+[        ] 	at org.gradle.execution.taskgraph.DefaultTaskExecutionGraph$BuildOperationAwareExecutionAction.execute(DefaultTaskExecutionGraph.java:303)
+[        ] 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.execute(DefaultPlanExecutor.java:459)
+[        ] 	at org.gradle.execution.plan.DefaultPlanExecutor$ExecutorWorker.run(DefaultPlanExecutor.java:376)
+[        ] 	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:64)
+[        ] 	at org.gradle.internal.concurrent.AbstractManagedExecutor$1.run(AbstractManagedExecutor.java:48)
+[        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+[        ] 	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+[        ] 	at java.base/java.lang.Thread.run(Unknown Source)
+[        ] BUILD FAILED in 1m 17s
+[  +37 ms] Gradle task assembleRelease failed with exit code 1
+[        ] 
+           #0      throwToolExit (package:flutter_tools/src/base/common.dart:34:3)
+           #1      AndroidGradleBuilder.buildGradleApp (package:flutter_tools/src/android/gradle.dart:572:7)
+           <asynchronous suspension>
+           #2      AndroidGradleBuilder.buildApk (package:flutter_tools/src/android/gradle.dart:232:5)
+           <asynchronous suspension>
+           #3      BuildApkCommand.runCommand (package:flutter_tools/src/commands/build_apk.dart:154:5)
+           <asynchronous suspension>
+           #4      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:1558:27)
+           <asynchronous suspension>
+           #5      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #6      CommandRunner.runCommand (package:args/command_runner.dart:212:13)
+           <asynchronous suspension>
+           #7      FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:496:9)
+           <asynchronous suspension>
+           #8      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #9      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:431:5)
+           <asynchronous suspension>
+           #10     run.<anonymous closure>.<anonymous closure> (package:flutter_tools/runner.dart:98:11)
+           <asynchronous suspension>
+           #11     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:154:19)
+           <asynchronous suspension>
+           #12     main (package:flutter_tools/executable.dart:99:3)
+           <asynchronous suspension>
+
+

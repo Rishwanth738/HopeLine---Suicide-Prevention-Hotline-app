@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "182118244617",
+    "project_id": "hope-line-ded59",
+    "storage_bucket": "hope-line-ded59.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:182118244617:android:13e8432a855010e430f3d8",
+        "android_client_info": {
+          "package_name": "com.hopeline.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDWptZ7cDArykszu1kvcmTpGIxcVvfsxw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

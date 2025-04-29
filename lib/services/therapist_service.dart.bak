@@ -1,0 +1,584 @@
+import 'dart:async';
+import 'dart:convert';
+import 'dart:io';
+import 'package:flutter/foundation.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:flutter/material.dart';
+
+class TherapistService {
+  static final TherapistService _instance = TherapistService._internal();
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
+  
+  // Stream controllers for messages and connection status
+  final StreamController<Map<String, dynamic>> _messageController = StreamController<Map<String, dynamic>>.broadcast();
+  final StreamController<bool> _connectionStatusController = StreamController<bool>.broadcast();
+  
+  // Current chat session data
+  String? _currentTherapistId;
+  String? _currentChatId;
+  bool _isConnected = false;
+  StreamSubscription? _chatSubscription;
+  
+  // Getters for streams
+  Stream<Map<String, dynamic>> get messageStream => _messageController.stream;
+  Stream<bool> get connectionStatusStream => _connectionStatusController.stream;
+  bool get isConnected => _isConnected;
+  String? get currentTherapistId => _currentTherapistId;
+  
+  factory TherapistService() {
+    return _instance;
+  }
+  
+  TherapistService._internal();
+  
+  /// Connect to an available therapist
+  Future<bool> connectToTherapist() async {
+    if (_isConnected) {
+      return true; // Already connected
+    }
+    
+    try {
+      final user = _auth.currentUser;
+      if (user == null) {
+        return false;
+      }
+      
+      // First check if user already has an active chat
+      final activeChatQuery = await _firestore
+          .collection('chats')
+          .where('userId', isEqualTo: user.uid)
+          .where('status', isEqualTo: 'active')
+          .limit(1)
+          .get();
+      
+      if (activeChatQuery.docs.isNotEmpty) {
+        // Reconnect to existing chat
+        final chatDoc = activeChatQuery.docs.first;
+        _currentChatId = chatDoc.id;
+        _currentTherapistId = chatDoc.data()['therapistId'];
+        _setupChatListener();
+        
+        _isConnected = true;
+        _connectionStatusController.add(true);
+        return true;
+      }
+      
+      // Find available therapist
+      final availableTherapistQuery = await _firestore
+          .collection('therapists')
+          .where('status', isEqualTo: 'available')
+          .limit(1)
+          .get();
+      
+      if (availableTherapistQuery.docs.isEmpty) {
+        // No available therapists
+        return false;
+      }
+      
+      // Select first available therapist
+      final therapistDoc = availableTherapistQuery.docs.first;
+      _currentTherapistId = therapistDoc.id;
+      
+      // Create new chat session
+      final chatRef = await _firestore.collection('chats').add({
+        'userId': user.uid,
+        'therapistId': _currentTherapistId,
+        'startedAt': FieldValue.serverTimestamp(),
+        'lastMessageAt': FieldValue.serverTimestamp(),
+        'status': 'active',
+      });
+      
+      _currentChatId = chatRef.id;
+      
+      // Update therapist status to busy
+      await _firestore.collection('therapists').doc(_currentTherapistId).update({
+        'status': 'busy',
+        'currentChatId': _currentChatId,
+      });
+      
+      // Add system message to indicate start of conversation
+      await _addSystemMessage('Connected to therapist. You can start chatting now.');
+      
+      // Setup chat listener
+      _setupChatListener();
+      
+      _isConnected = true;
+      _connectionStatusController.add(true);
+      return true;
+    } catch (e) {
+      print('Error connecting to therapist: $e');
+      return false;
+    }
+  }
+  
+  /// Send a message to the therapist
+  Future<bool> sendMessage(String message) async {
+    if (!_isConnected || _currentChatId == null) {
+      return false;
+    }
+    
+    try {
+      final user = _auth.currentUser;
+      if (user == null) return false;
+      
+      // Add message to messages subcollection
+      await _firestore
+          .collection('chats')
+          .doc(_currentChatId)
+          .collection('messages')
+          .add({
+        'senderId': user.uid,
+        'senderType': 'user',
+        'message': message,
+        'timestamp': FieldValue.serverTimestamp(),
+        'read': false,
+      });
+      
+      // Update last message timestamp
+      await _firestore
+          .collection('chats')
+          .doc(_currentChatId)
+          .update({
+        'lastMessageAt': FieldValue.serverTimestamp(),
+      });
+      
+      return true;
+    } catch (e) {
+      print('Error sending message: $e');
+      return false;
+    }
+  }
+  
+  /// End chat with therapist
+  Future<bool> endChat() async {
+    if (!_isConnected || _currentChatId == null) {
+      return false;
+    }
+    
+    try {
+      // Add system message to indicate end of conversation
+      await _addSystemMessage('Chat session ended.');
+      
+      // Update chat status
+      await _firestore
+          .collection('chats')
+          .doc(_currentChatId)
+          .update({
+        'status': 'ended',
+        'endedAt': FieldValue.serverTimestamp(),
+      });
+      
+      // Update therapist status back to available
+      if (_currentTherapistId != null) {
+        await _firestore
+            .collection('therapists')
+            .doc(_currentTherapistId)
+            .update({
+          'status': 'available',
+          'currentChatId': null,
+        });
+      }
+      
+      // Cleanup
+      await _disconnectInternal();
+      return true;
+    } catch (e) {
+      print('Error ending chat: $e');
+      return false;
+    }
+  }
+  
+  /// Disconnect from the current chat session
+  Future<void> disconnect() async {
+    await _disconnectInternal();
+  }
+  
+  /// Internal method to disconnect and clean up resources
+  Future<void> _disconnectInternal() async {
+    _chatSubscription?.cancel();
+    _chatSubscription = null;
+    _currentChatId = null;
+    _currentTherapistId = null;
+    _isConnected = false;
+    _connectionStatusController.add(false);
+  }
+  
+  /// Setup listener for chat messages
+  void _setupChatListener() {
+    if (_currentChatId == null) return;
+    
+    _chatSubscription?.cancel();
+    
+    _chatSubscription = _firestore
+        .collection('chats')
+        .doc(_currentChatId)
+        .collection('messages')
+        .orderBy('timestamp', descending: false)
+        .snapshots()
+        .listen((snapshot) {
+      for (var change in snapshot.docChanges) {
+        if (change.type == DocumentChangeType.added) {
+          final message = change.doc.data();
+          message['id'] = change.doc.id;
+          
+          // For messages from therapist, mark as read
+          if (message['senderType'] == 'therapist' && message['read'] == false) {
+            _firestore
+                .collection('chats')
+                .doc(_currentChatId)
+                .collection('messages')
+                .doc(change.doc.id)
+                .update({'read': true});
+          }
+          
+          _messageController.add(message);
+        }
+      }
+    }, onError: (error) {
+      print('Error in chat listener: $error');
+    });
+  }
+  
+  /// Add a system message to the chat
+  Future<void> _addSystemMessage(String message) async {
+    if (_currentChatId == null) return;
+    
+    await _firestore
+        .collection('chats')
+        .doc(_currentChatId)
+        .collection('messages')
+        .add({
+      'senderId': 'system',
+      'senderType': 'system',
+      'message': message,
+      'timestamp': FieldValue.serverTimestamp(),
+      'read': true,
+    });
+  }
+  
+  /// Get chat history
+  Future<List<Map<String, dynamic>>> getChatHistory() async {
+    if (_currentChatId == null) {
+      return [];
+    }
+    
+    try {
+      final messagesQuery = await _firestore
+          .collection('chats')
+          .doc(_currentChatId)
+          .collection('messages')
+          .orderBy('timestamp', descending: false)
+          .get();
+      
+      return messagesQuery.docs.map((doc) {
+        final data = doc.data();
+        data['id'] = doc.id;
+        return data;
+      }).toList();
+    } catch (e) {
+      print('Error getting chat history: $e');
+      return [];
+    }
+  }
+  
+  /// Get information about the current therapist
+  Future<Map<String, dynamic>?> getCurrentTherapistInfo() async {
+    if (_currentTherapistId == null) {
+      return null;
+    }
+    
+    try {
+      final therapistDoc = await _firestore
+          .collection('therapists')
+          .doc(_currentTherapistId)
+          .get();
+      
+      if (!therapistDoc.exists) {
+        return null;
+      }
+      
+      final data = therapistDoc.data()!;
+      data['id'] = therapistDoc.id;
+      return data;
+    } catch (e) {
+      print('Error getting therapist info: $e');
+      return null;
+    }
+  }
+  
+  /// Dispose method to clean up resources
+  void dispose() {
+    _chatSubscription?.cancel();
+    _messageController.close();
+    _connectionStatusController.close();
+  }
+  
+  // Get all available therapists
+  Stream<QuerySnapshot> getAvailableTherapists({
+    String? specialization,
+    String? searchQuery,
+  }) {
+    Query query = _firestore.collection('therapists');
+    
+    // Only show active therapists by default
+    query = query.where('isActive', isEqualTo: true);
+    
+    // Apply specialization filter if provided
+    if (specialization != null && specialization.isNotEmpty) {
+      query = query.where('specialization', isEqualTo: specialization);
+    }
+    
+    // We can't directly filter by search query because Firestore doesn't support
+    // substring matches. So we'll do initial filtering server-side and further
+    // filtering client-side in the TherapistListScreen
+    
+    return query.snapshots();
+  }
+  
+  // Get therapist by ID
+  Future<DocumentSnapshot> getTherapistById(String therapistId) {
+    return _firestore.collection('therapists').doc(therapistId).get();
+  }
+  
+  // Create or get existing conversation
+  Future<String> getOrCreateConversation(String userId, String therapistId) async {
+    // Check if conversation already exists
+    final QuerySnapshot existingConversations = await _firestore
+        .collection('conversations')
+        .where('participants', arrayContains: userId)
+        .get();
+    
+    for (var doc in existingConversations.docs) {
+      final data = doc.data() as Map<String, dynamic>;
+      final List<dynamic> participants = data['participants'] as List<dynamic>;
+      
+      if (participants.contains(therapistId)) {
+        return doc.id;
+      }
+    }
+    
+    // Create new conversation if none exists
+    final conversationRef = await _firestore.collection('conversations').add({
+      'participants': [userId, therapistId],
+      'createdAt': FieldValue.serverTimestamp(),
+      'lastMessage': null,
+      'lastMessageTime': null,
+      'unreadCount': 0,
+    });
+    
+    return conversationRef.id;
+  }
+  
+  // Send message to therapist
+  Future<void> sendMessageToTherapist({
+    required String conversationId,
+    required String senderId,
+    required String content,
+    required String recipientId,
+  }) async {
+    // Create message
+    await _firestore
+        .collection('conversations')
+        .doc(conversationId)
+        .collection('messages')
+        .add({
+      'senderId': senderId,
+      'content': content,
+      'timestamp': FieldValue.serverTimestamp(),
+      'isRead': false,
+    });
+    
+    // Update conversation with last message
+    await _firestore.collection('conversations').doc(conversationId).update({
+      'lastMessage': content,
+      'lastMessageTime': FieldValue.serverTimestamp(),
+      'unreadCount': FieldValue.increment(1),
+    });
+  }
+  
+  // Get messages stream for a conversation
+  Stream<QuerySnapshot> getMessages(String conversationId) {
+    return _firestore
+        .collection('conversations')
+        .doc(conversationId)
+        .collection('messages')
+        .orderBy('timestamp', descending: true)
+        .snapshots();
+  }
+  
+  // Get user conversations
+  Stream<QuerySnapshot> getUserConversations() {
+    final user = _auth.currentUser;
+    
+    if (user == null) {
+      throw Exception('User not authenticated');
+    }
+    
+    return _firestore
+        .collection('conversations')
+        .where('userId', isEqualTo: user.uid)
+        .orderBy('lastMessageTime', descending: true)
+        .snapshots();
+  }
+  
+  // Mark messages as read
+  Future<void> markMessagesAsRead(String conversationId, String userId) async {
+    final QuerySnapshot unreadMessages = await _firestore
+        .collection('conversations')
+        .doc(conversationId)
+        .collection('messages')
+        .where('isRead', isEqualTo: false)
+        .where('senderId', isNotEqualTo: userId)
+        .get();
+    
+    final batch = _firestore.batch();
+    
+    for (var doc in unreadMessages.docs) {
+      batch.update(doc.reference, {'isRead': true});
+    }
+    
+    if (unreadMessages.docs.isNotEmpty) {
+      batch.update(
+        _firestore.collection('conversations').doc(conversationId),
+        {'unreadCount': 0}
+      );
+    }
+    
+    await batch.commit();
+  }
+  
+  // Request emergency support
+  Future<void> requestEmergencySupport() async {
+    try {
+      final user = _auth.currentUser;
+      
+      if (user == null) {
+        throw Exception('User not authenticated');
+      }
+      
+      // Add emergency request to collection
+      await _firestore.collection('emergencyRequests').add({
+        'userId': user.uid,
+        'timestamp': FieldValue.serverTimestamp(),
+        'status': 'pending',
+        'notes': 'User requested emergency support',
+      });
+      
+      // Get user profile for contact information
+      final userDoc = await _firestore.collection('users').doc(user.uid).get();
+      
+      if (!userDoc.exists) {
+        throw Exception('User profile not found');
+      }
+      
+      final userData = userDoc.data() as Map<String, dynamic>;
+      
+      // Notify emergency contacts if available
+      if (userData.containsKey('emergencyContacts') && 
+          userData['emergencyContacts'] is List && 
+          (userData['emergencyContacts'] as List).isNotEmpty) {
+        
+        for (var contact in userData['emergencyContacts']) {
+          await _firestore.collection('emergencyNotifications').add({
+            'userId': user.uid,
+            'contactName': contact['name'],
+            'contactPhone': contact['phone'],
+            'timestamp': FieldValue.serverTimestamp(),
+            'status': 'pending',
+          });
+        }
+      }
+    } catch (e) {
+      throw Exception('Failed to request emergency support: $e');
+    }
+  }
+  
+  // Get therapist specializations
+  Future<List<String>> getTherapistSpecializations() async {
+    final QuerySnapshot snapshot = await _firestore.collection('therapists').get();
+    
+    Set<String> specializations = {};
+    
+    for (var doc in snapshot.docs) {
+      final data = doc.data() as Map<String, dynamic>;
+      if (data.containsKey('specialization') && 
+          data['specialization'] != null && 
+          data['specialization'].toString().isNotEmpty) {
+        specializations.add(data['specialization'].toString());
+      }
+    }
+    
+    return specializations.toList()..sort();
+  }
+  
+  // Search therapists by name or specialization
+  Future<List<DocumentSnapshot>> searchTherapists(String query) async {
+    try {
+      // Search by name
+      final nameResults = await _firestore
+          .collection('therapists')
+          .where('isAvailable', isEqualTo: true)
+          .where('name', isGreaterThanOrEqualTo: query)
+          .where('name', isLessThanOrEqualTo: query + '\uf8ff')
+          .get();
+      
+      // Search by specialization
+      final specializationResults = await _firestore
+          .collection('therapists')
+          .where('isAvailable', isEqualTo: true)
+          .where('specialization', isGreaterThanOrEqualTo: query)
+          .where('specialization', isLessThanOrEqualTo: query + '\uf8ff')
+          .get();
+      
+      // Combine results, avoiding duplicates
+      final Map<String, DocumentSnapshot> combinedResults = {};
+      
+      for (var doc in nameResults.docs) {
+        combinedResults[doc.id] = doc;
+      }
+      
+      for (var doc in specializationResults.docs) {
+        combinedResults[doc.id] = doc;
+      }
+      
+      return combinedResults.values.toList();
+    } catch (e) {
+      throw Exception('Failed to search therapists: $e');
+    }
+  }
+  
+  // Rate a therapist after conversation
+  Future<void> rateTherapist(String therapistId, double rating, String? feedback) async {
+    final therapistRef = _firestore.collection('therapists').doc(therapistId);
+    
+    // Get current rating information
+    final therapistDoc = await therapistRef.get();
+    final data = therapistDoc.data() as Map<String, dynamic>;
+    
+    final currentRating = (data['rating'] ?? 0.0) as double;
+    final currentRatingCount = (data['ratingCount'] ?? 0) as int;
+    
+    // Calculate new average rating
+    final newRatingCount = currentRatingCount + 1;
+    final newAverageRating = 
+        ((currentRating * currentRatingCount) + rating) / newRatingCount;
+    
+    // Update therapist document
+    await therapistRef.update({
+      'rating': newAverageRating,
+      'ratingCount': newRatingCount,
+    });
+    
+    // Save the feedback if provided
+    if (feedback != null && feedback.isNotEmpty) {
+      await _firestore.collection('therapistFeedback').add({
+        'therapistId': therapistId,
+        'rating': rating,
+        'feedback': feedback,
+        'timestamp': FieldValue.serverTimestamp(),
+      });
+    }
+  }
+} 

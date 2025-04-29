@@ -1,0 +1,22 @@
+HOPE LINE APP INSTALLATION GUIDE
+
+1. Locate the app-debug.apk file in the following directory:
+   build\app\outputs\flutter-apk\app-debug.apk
+
+2. Transfer this APK file to your Android device using one of these methods:
+   - Email the APK to yourself
+   - Upload to Google Drive and download on your phone
+   - Connect your phone via USB and copy the file directly
+
+3. On your Android device, locate the APK file and tap to install.
+
+4. You may need to enable 'Install from unknown sources' in your security settings.
+
+5. Once installed, open the app.
+
+FEATURES:
+- Emergency Hotline: Call 988 for immediate crisis support
+- Emergency Contacts: Add contacts who can be alerted in an emergency
+- AI Chat Assistant: Talk with an AI for emotional support
+
+IMPORTANT: This is a demo version. In a real emergency, always call 988 or your local emergency number.
