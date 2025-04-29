@@ -2,9 +2,9 @@ import 'dart:convert';
 import 'package:http/http.dart' as http;
 
 class AIService {
-  static const String _apiKey = "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";
-  static const String _apiUrl = "https://openrouter.ai/api/v1/chat/completions";
-  static const String _model = "deepseek-chat";
+  static const String _apiKey = "api_key";
+  static const String _apiUrl = "base_url";
+  static const String _model = "chat";
 
   static Future<String> getChatResponse(String userMessage) async {
     try {
@@ -14,7 +14,7 @@ class AIService {
           "Content-Type": "application/json",
           "Authorization": "Bearer $_apiKey",
           "HTTP-Referer": "http://your-app-domain.com",
-          "X-Title": "TherapyBot",
+          "X-Title": "HopeLine",
         },
         body: jsonEncode({
           "model": _model,
