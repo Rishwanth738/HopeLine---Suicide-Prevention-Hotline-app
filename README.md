@@ -40,7 +40,7 @@ Hope Line is a comprehensive mental health support application designed to provi
 
 ## Installation
 
-1. Download the APK from the release section
+1. Download the APK from this link: https://drive.google.com/file/d/1kfsKtQ-n_ThDKPYZ0VlQdvlF6NvCJmdi/view?usp=drive_link
 2. Enable installation from unknown sources in your device settings
 3. Install the APK
 4. Launch the Hope Line app
